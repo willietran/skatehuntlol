@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block script %}
+
+<script src="{% static 'js/components/feed.js' %}" type="text/jsx" ></script>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+	<div>React will appear below here</div>
+	<div id="feed"></div>
+
+</div>
+
+
+
+{% endblock %}
