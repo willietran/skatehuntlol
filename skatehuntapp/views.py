@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from skatehuntapp.forms import NewUserCreationForm, PostForm
+import json
 
 
 # Single Page
@@ -9,10 +10,13 @@ from skatehuntapp.models import Post
 
 
 def home(request):
-    posts = Post.objects.all()
-    data = {'posts':posts}
+    return render(request, "index.html")
 
-    return render(request, "index.html", data)
+def posts(request):
+    posts = Post.objects.all()
+    data = json.dumps({'posts':posts})
+
+    return HttpResponse(json.dumps(data), content_type="application/json")
 
 
 # View to create a new account

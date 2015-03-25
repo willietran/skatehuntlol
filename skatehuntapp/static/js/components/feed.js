@@ -34,6 +34,6 @@ var FeedBox = React.createClass({
 });
 
 React.render(
-    <FeedBox url="/home/"/>,
+    <FeedBox url="/posts/"/>,
     document.getElementById('feed')
 );

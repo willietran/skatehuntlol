@@ -6,6 +6,7 @@ from django.contrib import admin
 urlpatterns = patterns('',
     # Admin:
     url(r'^$', 'skatehuntapp.views.home', name='home'),
+    url(r'^posts/$', 'skatehuntapp.views.posts', name='home'),
     url(r'^admin/', include(admin.site.urls)),
 
 
